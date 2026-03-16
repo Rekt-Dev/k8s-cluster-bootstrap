@@ -1,0 +1,8 @@
+image:
+  repository: nginx
+  tag: stable
+
+extraContainers:
+  - name: sidecar
+    image: busybox
+    command: ["sh", "-c", "echo Sidecar running && sleep 3600"]

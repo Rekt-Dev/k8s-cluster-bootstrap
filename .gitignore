@@ -1,4 +1,9 @@
-.vscode/
-.infracost/
-.vagrant/
-.DS_Store
+# Local-only Terraform files
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+
+# Sensitive info
+*.pem
+.env
