@@ -1,8 +1,29 @@
+replicaCount: 1
+
 image:
   repository: nginx
-  tag: stable
+  tag: "latest"
+  pullPolicy: IfNotPresent
 
-extraContainers:
-  - name: sidecar
-    image: busybox
-    command: ["sh", "-c", "echo Sidecar running && sleep 3600"]
+serviceAccount:
+  create: true
+  name: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+
+# The ghost that's haunting you:
+httpRoute:
+  enabled: false
+
+# Adding these just in case your templates look for them too
+autoscaling:
+  enabled: false
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
